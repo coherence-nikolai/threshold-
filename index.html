@@ -4,31 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>threshold</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
 
   <div id="intro">threshold</div>
 
-  <div id="ui">
-    <div id="language-toggle">EN | ES</div>
-    <div id="field-selector">
-      <button data-field="self">Self</button>
-      <button data-field="relationship">Relationship</button>
-      <button data-field="body">Body</button>
-      <button data-field="shadow">Shadow</button>
-      <button data-field="time">Time</button>
-      <button data-field="silence">Silence</button>
+  <div id="ui" style="display:none; flex-direction:column; align-items:center; gap:28px;">
+
+    <div id="language-toggle" style="cursor:pointer; font-size:0.8rem; opacity:0.6;">
+      EN | ES
+    </div>
+
+    <div id="field-selector" style="display:flex; gap:22px;">
+
+      <button data-field="self">
+        <span class="symbol">○</span>
+        <span class="label">Self</span>
+      </button>
+
+      <button data-field="relationship">
+        <span class="symbol">∞</span>
+        <span class="label">Relationship</span>
+      </button>
+
+      <button data-field="body">
+        <span class="symbol">△</span>
+        <span class="label">Body</span>
+      </button>
+
+      <button data-field="shadow">
+        <span class="symbol">◑</span>
+        <span class="label">Shadow</span>
+      </button>
+
+      <button data-field="time">
+        <span class="symbol">⌛</span>
+        <span class="label">Time</span>
+      </button>
+
+      <button data-field="silence">
+        <span class="symbol">—</span>
+        <span class="label">Silence</span>
+      </button>
+
     </div>
 
     <div id="question-container">
-      <div id="question"></div>
+      <div id="question" style="text-align:center; max-width:700px; line-height:1.6;"></div>
     </div>
 
-    <button id="next">Continue</button>
+    <button id="next" style="margin-top:12px;">Continue</button>
+
   </div>
 
-  <script src="questions.js"></script>
-  <script src="engine.js"></script>
+  <script src="questions.js?v=4"></script>
+  <script src="engine.js?v=4"></script>
+
 </body>
 </html>
