@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>threshold</title>
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
 
@@ -23,14 +23,18 @@
     </div>
   </div>
 
-  <!-- Intro Title -->
-  <div id="intro" style="display:none;">threshold</div>
+  <!-- Intro Title + Whisper -->
+  <div id="intro" style="display:none;">
+    <div id="intro-title">threshold</div>
+    <div id="intro-subtitle">a question is a doorway</div>
+  </div>
 
   <!-- Main UI -->
   <div id="ui" style="display:none; flex-direction:column; align-items:center; gap:28px;">
 
-    <div id="language-toggle" style="cursor:pointer;">
-      EN | ES
+    <div id="topbar">
+      <div id="language-toggle">EN | ES</div>
+      <button id="info-btn" aria-label="About Threshold">i</button>
     </div>
 
     <div id="field-selector">
@@ -72,10 +76,32 @@
     </div>
 
     <button id="next">Continue</button>
-
   </div>
 
-  <script src="questions.js?v=5"></script>
-  <script src="engine.js?v=5"></script>
+  <!-- Info Modal -->
+  <div id="info-modal" class="hidden" role="dialog" aria-modal="true" aria-label="About">
+    <div id="info-card">
+      <button id="info-close" aria-label="Close">×</button>
+
+      <div class="info-title" id="info-title">threshold</div>
+
+      <div class="info-block">
+        <div class="info-label" id="info-label-1">Threshold</div>
+        <div class="info-text" id="info-text-1">
+          The space between who you were and who you are becoming.
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-label" id="info-label-2">Umbral</div>
+        <div class="info-text" id="info-text-2">
+          El límite entre lo conocido y lo que empieza a revelarse.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js?v=6"></script>
+  <script src="engine.js?v=6"></script>
 </body>
 </html>
