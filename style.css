@@ -1,12 +1,8 @@
 /* =========================
-   Threshold – Full Style
+   Threshold – Full Style v5
    ========================= */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -19,32 +15,103 @@ body {
   padding: 40px 20px;
 }
 
-/* Intro */
+/* ---------- Landing Screen ---------- */
+
+#lang-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.04), rgba(0,0,0,0.2));
+}
+
+.lang-card {
+  width: min(520px, 92vw);
+  padding: 28px 22px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10,12,18,0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.lang-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.lang-subtitle {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  opacity: 0.55;
+  letter-spacing: 0.05em;
+}
+
+.lang-buttons {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.lang-btn {
+  width: 120px;
+  padding: 10px 0;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.22);
+  color: inherit;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.45);
+}
+
+.lang-footnote {
+  margin-top: 16px;
+  font-size: 0.75rem;
+  opacity: 0.4;
+}
+
+/* ---------- Intro Title ---------- */
 
 #intro {
-  position: absolute;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.4rem;
   letter-spacing: 0.4em;
   text-transform: lowercase;
-  opacity: 0.6;
-  animation: fadeOut 6s forwards;
+  opacity: 0.7;
 }
 
-@keyframes fadeOut {
-  0% { opacity: 0.6; }
-  80% { opacity: 0.6; }
+/* We will animate this via JS (adding .fade-out) */
+#intro.fade-out {
+  animation: introFadeOut 3.2s forwards;
+}
+
+@keyframes introFadeOut {
+  0%   { opacity: 0.7; }
+  70%  { opacity: 0.7; }
   100% { opacity: 0; visibility: hidden; }
 }
 
-/* Main UI */
+/* ---------- Main UI ---------- */
 
 #ui {
-  display: none;
   flex-direction: column;
   align-items: center;
   gap: 28px;
   text-align: center;
-  max-width: 800px;
+  max-width: 860px;
   width: 100%;
 }
 
@@ -52,14 +119,13 @@ body {
 
 #language-toggle {
   font-size: 0.8rem;
-  opacity: 0.5;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
+  opacity: 0.55;
+  letter-spacing: 0.12em;
+  transition: opacity 0.25s ease;
 }
 
 #language-toggle:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* Field Selector */
@@ -94,7 +160,7 @@ body {
   line-height: 1;
 }
 
-/* Faint label */
+/* Faint label (always visible, stronger on hover/focus) */
 
 .label {
   font-size: 0.65rem;
@@ -111,9 +177,7 @@ body {
 
 /* Question */
 
-#question-container {
-  margin-top: 20px;
-}
+#question-container { margin-top: 12px; }
 
 #question {
   font-size: 1.15rem;
@@ -125,7 +189,7 @@ body {
 /* Continue Button */
 
 #next {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 10px 22px;
   background: none;
   border: 1px solid rgba(255,255,255,0.2);
