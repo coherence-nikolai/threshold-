@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>threshold</title>
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 
@@ -15,8 +15,8 @@
       <div class="lang-subtitle">Elige idioma</div>
 
       <div class="lang-buttons">
-        <button id="choose-en" class="lang-btn">EN</button>
-        <button id="choose-es" class="lang-btn">ES</button>
+        <button id="choose-en" class="lang-btn" type="button">EN</button>
+        <button id="choose-es" class="lang-btn" type="button">ES</button>
       </div>
 
       <div class="lang-footnote">You can switch later.</div>
@@ -33,55 +33,67 @@
   <div id="ui" style="display:none; flex-direction:column; align-items:center; gap:28px;">
 
     <div id="topbar">
-      <div id="language-toggle">EN | ES</div>
-      <button id="info-btn" aria-label="About Threshold">i</button>
+      <div id="language-toggle" role="button" tabindex="0" aria-label="Toggle language">EN | ES</div>
+      <button id="info-btn" aria-label="About Threshold" type="button">i</button>
     </div>
 
-    <div id="field-selector">
+    <div id="field-selector" aria-label="Categories">
 
-      <button data-field="self">
+      <button data-field="self" type="button">
         <span class="symbol">○</span>
         <span class="label" data-en="Self" data-es="Yo">Self</span>
       </button>
 
-      <button data-field="relationship">
+      <button data-field="relationship" type="button">
         <span class="symbol">∞</span>
         <span class="label" data-en="Relationship" data-es="Vínculo">Relationship</span>
       </button>
 
-      <button data-field="body">
+      <button data-field="body" type="button">
         <span class="symbol">△</span>
         <span class="label" data-en="Body" data-es="Cuerpo">Body</span>
       </button>
 
-      <button data-field="shadow">
+      <button data-field="shadow" type="button">
         <span class="symbol">◑</span>
         <span class="label" data-en="Shadow" data-es="Sombra">Shadow</span>
       </button>
 
-      <button data-field="time">
+      <button data-field="time" type="button">
         <span class="symbol">⌛</span>
         <span class="label" data-en="Time" data-es="Tiempo">Time</span>
       </button>
 
-      <button data-field="silence">
+      <button data-field="silence" type="button">
         <span class="symbol">—</span>
         <span class="label" data-en="Silence" data-es="Silencio">Silence</span>
       </button>
 
     </div>
 
-    <div id="question-container">
+    <div id="question-container" aria-live="polite">
       <div id="question"></div>
     </div>
 
-    <button id="next">Continue</button>
+    <!-- Threshold button (press to continue) -->
+    <button id="next" class="threshold-btn" type="button" aria-label="Next question">
+      <span class="threshold-visual" aria-hidden="true">
+        <span class="ring ring-outer"></span>
+        <span class="ring ring-mid"></span>
+        <span class="ring ring-inner"></span>
+        <span class="threshold-line"></span>
+        <span class="threshold-core"></span>
+      </span>
+      <span class="threshold-text" id="next-label">press the threshold</span>
+      <span class="threshold-sub" id="next-sub">next</span>
+    </button>
+
   </div>
 
   <!-- Info Modal -->
   <div id="info-modal" class="hidden" role="dialog" aria-modal="true" aria-label="About">
     <div id="info-card">
-      <button id="info-close" aria-label="Close">×</button>
+      <button id="info-close" aria-label="Close" type="button">×</button>
 
       <div class="info-title" id="info-title">threshold</div>
 
@@ -101,7 +113,7 @@
     </div>
   </div>
 
-  <script src="questions.js?v=6"></script>
-  <script src="engine.js?v=6"></script>
+  <script src="questions.js?v=7"></script>
+  <script src="engine.js?v=7"></script>
 </body>
 </html>
