@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>threshold</title>
-  <link rel="stylesheet" href="style.css?v=10" />
+
+  <!-- IMPORTANT: keep these filenames exactly as shown -->
+  <link rel="stylesheet" href="style.css?v=12" />
 </head>
 <body>
 
@@ -32,12 +34,13 @@
   <!-- Main UI -->
   <div id="ui" style="display:none;">
 
-    <!-- Small hidden-ish language toggle -->
+    <!-- Small language toggle -->
     <button id="language-toggle" type="button" aria-label="Toggle language">EN | ES</button>
 
-    <!-- Minimal top row: categories + info -->
+    <!-- Top row: categories + info -->
     <div id="top-row" aria-label="Navigation">
       <div id="cats" aria-label="Categories">
+
         <button class="cat" data-field="self" type="button" aria-label="Self">
           <span class="ico">○</span>
           <span class="name" data-en="Self" data-es="Yo">Self</span>
@@ -67,6 +70,7 @@
           <span class="ico">—</span>
           <span class="name" data-en="Silence" data-es="Silencio">Silence</span>
         </button>
+
       </div>
 
       <button id="info-btn" type="button" aria-label="About">i</button>
@@ -81,13 +85,22 @@
     <button id="next" class="threshold-btn" type="button" aria-label="Next question">
       <span class="threshold-visual" aria-hidden="true">
         <span class="mirror"></span>
+        <span class="caustics"></span>
         <span class="sheen"></span>
+
         <span class="rim"></span>
         <span class="rim rim2"></span>
+
         <span class="gate"></span>
         <span class="spark"></span>
+
+        <!-- Ripple rings (triggered on tap) -->
+        <span class="ripple r1"></span>
+        <span class="ripple r2"></span>
+        <span class="ripple r3"></span>
       </span>
-      <span class="next-hint" id="next-hint">next</span>
+
+      <span class="next-hint" id="next-hint">cross the threshold</span>
     </button>
 
   </div>
@@ -115,7 +128,8 @@
     </div>
   </div>
 
-  <script src="questions.js?v=10"></script>
-  <script src="engine.js?v=10"></script>
+  <!-- IMPORTANT: these must exist in your repo root -->
+  <script src="questions.js?v=12"></script>
+  <script src="engine.js?v=12"></script>
 </body>
 </html>
